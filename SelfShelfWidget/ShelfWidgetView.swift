@@ -63,10 +63,7 @@ private struct ShelfRow: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            Rectangle()
-                .fill(tint.opacity(0.35))
-                .frame(height: 1)
-                .padding(.top, 3)
+            ShelfPlank(hex: snapshot.backgroundColorHex)
         }
     }
 }

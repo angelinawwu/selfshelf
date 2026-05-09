@@ -92,7 +92,6 @@ struct ShelfEditorView: View {
                     }
                     .padding(.horizontal, 12)
                     .padding(.top, 14)
-                    .padding(.bottom, 4)
                     ShelfPlank(hex: backgroundHex)
                 }
             }
