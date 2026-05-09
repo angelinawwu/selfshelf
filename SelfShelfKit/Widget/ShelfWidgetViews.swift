@@ -52,7 +52,7 @@ private struct ShelfWidgetHeader: View {
         let ink = Color(hex: snapshot.backgroundColorHex).contrastingInk()
         HStack(alignment: .firstTextBaseline) {
             Text(snapshot.name)
-                .font(.serif(compact ? 15 : 18))
+                .font(.custom(AppFont.serifName, size: compact ? 18 : 22))
                 .foregroundStyle(ink)
                 .lineLimit(1)
             Spacer(minLength: 4)

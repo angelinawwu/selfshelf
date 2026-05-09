@@ -72,25 +72,18 @@ struct ShelfDetailView: View {
     }
 
     private var livePreview: some View {
-        ZStack(alignment: .bottom) {
+        // Match the home-screen widget layout (same as ShelvesListView preview).
+        ZStack {
             ShelfBackground(hex: shelf.backgroundColorHex, preset: shelf.preset)
-            VStack(spacing: 0) {
-                HStack(alignment: .bottom, spacing: 6) {
-                    ForEach(Array(shelf.orderedBooks.prefix(8))) { book in
-                        BookCoverView(coverId: book.coverId, title: book.title)
-                            .aspectRatio(2.0/3.0, contentMode: .fit)
-                            .frame(maxHeight: 120)
-                    }
-                    Spacer(minLength: 0)
-                }
-                .padding(.horizontal, 14)
-                .padding(.top, 16)
-                .padding(.bottom, 6)
-                ShelfPlank(hex: shelf.backgroundColorHex)
-            }
+            ShelfWidgetMediumView(snapshot: shelf.snapshot())
+                .padding(16)
         }
-        .frame(height: 160)
-        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .aspectRatio(338.0/158.0, contentMode: .fit)
+        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .strokeBorder(AppTheme.hairline, lineWidth: 1)
+        )
     }
 
     private var grid: some View {
