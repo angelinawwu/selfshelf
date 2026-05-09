@@ -63,6 +63,7 @@ private struct ShelfRow: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom, 5)
             ShelfPlank(hex: snapshot.backgroundColorHex)
         }
     }
@@ -82,10 +83,10 @@ private struct SmallShelf: View {
 private struct MediumShelf: View {
     let snapshot: ShelfSnapshot
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ShelfHeader(snapshot: snapshot, compact: false)
+        VStack(alignment: .leading, spacing: 6) {
+            ShelfHeader(snapshot: snapshot, compact: true)
             Spacer(minLength: 0)
-            ShelfRow(snapshot: snapshot, books: snapshot.books.prefix(6))
+            ShelfRow(snapshot: snapshot, books: snapshot.books.prefix(7))
         }
     }
 }

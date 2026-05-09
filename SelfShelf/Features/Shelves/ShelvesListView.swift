@@ -99,7 +99,7 @@ private struct ShelfPreviewCard: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .firstTextBaseline) {
                 Text(shelf.name)
-                    .font(.serif(26))
+                    .font(.serif(22))
                     .foregroundStyle(AppTheme.ink)
                 Spacer()
                 Text("\(shelf.books.count) \(shelf.books.count == 1 ? "book" : "books")")
@@ -110,11 +110,11 @@ private struct ShelfPreviewCard: View {
             ZStack(alignment: .bottom) {
                 ShelfBackground(hex: shelf.backgroundColorHex, preset: shelf.preset)
                 VStack(spacing: 0) {
-                    HStack(alignment: .bottom, spacing: 6) {
-                        ForEach(Array(shelf.orderedBooks.prefix(6))) { book in
+                    HStack(alignment: .bottom, spacing: 5) {
+                        ForEach(Array(shelf.orderedBooks.prefix(7))) { book in
                             BookCoverView(coverId: book.coverId, title: book.title)
                                 .aspectRatio(2.0/3.0, contentMode: .fit)
-                                .frame(maxHeight: 110)
+                                .frame(maxHeight: 115)
                         }
                         if shelf.books.isEmpty {
                             Text("Empty")
@@ -126,6 +126,7 @@ private struct ShelfPreviewCard: View {
                     }
                     .padding(.horizontal, 14)
                     .padding(.top, 16)
+                    .padding(.bottom, 6)
                     ShelfPlank(hex: shelf.backgroundColorHex)
                 }
             }

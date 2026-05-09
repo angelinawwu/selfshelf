@@ -85,6 +85,7 @@ struct ShelfDetailView: View {
                 }
                 .padding(.horizontal, 14)
                 .padding(.top, 16)
+                .padding(.bottom, 6)
                 ShelfPlank(hex: shelf.backgroundColorHex)
             }
         }
