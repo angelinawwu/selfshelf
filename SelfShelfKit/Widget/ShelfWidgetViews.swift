@@ -89,10 +89,9 @@ private struct ShelfWidgetRow: View {
                             .aspectRatio(2.0/3.0, contentMode: .fit)
                         }
                     }
-                    Spacer(minLength: 0)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .center)
             .padding(.bottom, 5)
             ShelfPlank(hex: snapshot.backgroundColorHex)
         }
